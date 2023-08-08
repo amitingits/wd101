@@ -29,11 +29,11 @@ const displayData = () => {
         const acceptTermCell = '<td>' + entry.acceptTerms + '</td>';
         const dobCell = '<td>' + entry.dob + '</td>';
 
-        const row = '<tr>' + nameCell + emailCell + passCell + acceptTermCell + dobCell + '</tr>';
+        const row = '<tr>' + nameCell + emailCell + passCell + dobCell +acceptTermCell + '</tr>';
         
         return row;
     }).join("\n");
-   const table = '<table><tr> <th> Name </th> <th>Email</th> <th>Password</th> <th>Accepted Terms</th> <th>Date of Birth</th> </tr>' +tableData + '</table>';
+   const table = '<table><tr> <th> Name </th> <th>Email</th> <th>Password</th> <th>Date of Birth</th> <th>Accepted Terms</th> </tr>' +tableData + '</table>';
 
    let details = document.getElementById("showTable");
    details.innerHTML = table;
