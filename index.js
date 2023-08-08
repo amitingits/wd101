@@ -21,22 +21,34 @@ const getData = () => {
 }
 let dataArray = getData();
 const displayData = () => {
-    const entries = getData();
-    const tableData = entries.map((entry) => {
-        const nameCell = '<td>'+ entry.name + '</td>';
-        const emailCell = '<td>'+ entry.email + '</td>';
-        const passCell = '<td>' + entry.password + '</td>';
-        const acceptTermCell = '<td>' + entry.acceptTerms + '</td>';
-        const dobCell = '<td>' + entry.dob + '</td>';
+  const entries = getData();
+  const tableBody = document.getElementById("tableBody");
+  
+  tableBody.innerHTML = ""; // Clear previous content
+  
+  entries.forEach((entry) => {
+    const row = document.createElement("tr");
+    const nameCell = document.createElement("td");
+    const emailCell = document.createElement("td");
+    const passCell = document.createElement("td");
+    const dobCell = document.createElement("td");
+    const acceptTermCell = document.createElement("td");
 
-        const row = '<tr>' + nameCell + emailCell + passCell + dobCell +acceptTermCell + '</tr>';
-        
-        return row;
-    }).join("\n");
-   const table = '<table><tr> <th> Name </th> <th>Email</th> <th>Password</th> <th>Date of Birth</th> <th>Accepted Terms</th> </tr>' +tableData + '</table>';
+    nameCell.textContent = entry.name;
+    emailCell.textContent = entry.email;
+    passCell.textContent = entry.password;
+    dobCell.textContent = entry.dob;
+    acceptTermCell.textContent = entry.acceptTerms ? "Accepted" : "Not Accepted";
 
-   let details = document.getElementById("showTable");
-   details.innerHTML = table;
+    row.appendChild(nameCell);
+    row.appendChild(emailCell);
+    row.appendChild(passCell);
+    row.appendChild(dobCell);
+    row.appendChild(acceptTermCell);
+
+    tableBody.appendChild(row);
+  });
+};
 }
 const saveUserdata = (event) => {
         event.preventDefault();
