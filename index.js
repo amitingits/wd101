@@ -23,8 +23,7 @@ let dataArray = getData();
 const displayData = () => {
   const entries = getData();
   const tableBody = document.getElementById("tableBody");
-  
-  tableBody.innerHTML = ""; // Clear previous content
+ 
   
   entries.forEach((entry) => {
     const row = document.createElement("tr");
