@@ -160,18 +160,28 @@ th{
       </div>       
     </div>
     </div>
-    <div container mt-5>
-      <h2>
-        <hr />
-        Entries
-        <hr />
-      </h2>
-      <br />
-      <div class="table-responsive" id="showTable" >
-        <div>
-        </div>
-      </div>
-    </div>
+   <div container class="mt-5">
+  <h2>
+    <hr />
+    Entries
+    <hr />
+  </h2>
+  <br />
+  <div class="table-responsive" id="showTable">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Date of Birth</th>
+          <th>Accepted Terms</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+</div>
 
     <script src="index.js"></script>
   </body>
